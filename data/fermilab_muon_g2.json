@@ -1,0 +1,79 @@
+{
+  "experiment": "Fermilab Muon g-2",
+  "reference": "Phys. Rev. Lett. 126, 141801 (2021)",
+  "doi": "10.1103/PhysRevLett.126.141801",
+  "date": "2021-04-07",
+  "updated": "2023-08-10",
+  "description": "Measurement of the muon anomalous magnetic moment using a muon storage ring at Fermilab",
+
+  "measured_value": {
+    "a_mu": 0.00116592061,
+    "uncertainty": 4.1e-10,
+    "relative_uncertainty": 3.5e-7,
+    "unit": "dimensionless"
+  },
+
+  "standard_model_prediction": {
+    "a_mu_SM": 0.00116591810,
+    "uncertainty": 4.3e-10,
+    "relative_uncertainty": 3.7e-7,
+    "unit": "dimensionless",
+    "source": "Theory Initiative (2020)"
+  },
+
+  "discrepancy": {
+    "delta_a_mu": 2.51e-9,
+    "sigma_deviation": 4.2,
+    "description": "4.2 sigma tension between measurement and Standard Model"
+  },
+
+  "experimental_conditions": {
+    "storage_ring_radius": 7.112,
+    "storage_ring_radius_unit": "m",
+    "magnetic_field": 1.4513,
+    "magnetic_field_unit": "T",
+    "muon_momentum": 3.094,
+    "muon_momentum_unit": "GeV/c",
+    "magic_momentum": true,
+    "muon_lifetime": 64.4,
+    "muon_lifetime_unit": "microseconds",
+    "temperature": 293,
+    "temperature_unit": "K",
+    "altitude": 228,
+    "altitude_unit": "m",
+    "location": "Fermilab, Batavia, Illinois, USA"
+  },
+
+  "systematic_uncertainties": {
+    "statistical": 4.0e-10,
+    "magnetic_field": 1.1e-10,
+    "electric_field": 0.8e-10,
+    "beam_dynamics": 0.7e-10,
+    "detector": 0.5e-10,
+    "pileup": 0.3e-10,
+    "total_systematic": 1.5e-10
+  },
+
+  "previous_measurements": [
+    {
+      "experiment": "BNL E821",
+      "year": 2006,
+      "a_mu": 0.00116592089,
+      "uncertainty": 6.3e-10,
+      "reference": "Phys. Rev. D 73, 072003 (2006)"
+    }
+  ],
+
+  "combined_result": {
+    "a_mu_combined": 0.00116592061,
+    "uncertainty_combined": 3.5e-10,
+    "description": "Fermilab + BNL combined result"
+  },
+
+  "notes": [
+    "Storage ring operated at 'magic momentum' where time dilation cancels electric field effects",
+    "Result confirms BNL E821 discrepancy with improved precision",
+    "AWUT predicts altitude dependence of a_mu due to local vacuum modulation",
+    "Fermilab (228m altitude) vs future experiments at different altitudes could test AWUT"
+  ]
+}
