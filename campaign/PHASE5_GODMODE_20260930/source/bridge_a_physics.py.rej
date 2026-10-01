@@ -1,0 +1,19 @@
+--- bridge_a_physics.py
++++ bridge_a_physics.py
+@@ -258,10 +258,14 @@ class NoncommutingHistoryLaw(BridgeALaw):
+         H_real = rng.standard_normal((dim, dim))
+         H = (H_real - H_real.T) * 0.1  # Skew-symmetric real part
+         H_imag = rng.standard_normal((dim, dim))
+-        H += 1j * (H_imag - H_imag.T) * 0.1  # Skew-Hermitian
++        H = H.astype(complex) + 1j * (H_imag - H_imag.T) * 0.1  # Skew-Hermitian
+         
+         # Unitary operator
+-        U = self.xp.linalg.matrix_exp(H)
++        if self.gpu:
++            U = self.xp.linalg.matrix_exp(H)
++        else:
++            from scipy.linalg import expm
++            U = expm(H)
+         return U
+     
+     def evolve_history(self, psi_0: xp.ndarray, n_steps: int,
